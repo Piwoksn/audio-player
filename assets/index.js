@@ -62,9 +62,9 @@ function play(obj) {
   if (obj.currentSong === null) {
     audio.src = obj.allSongs[0].src;
     audio.play();
-    obj.currentSong = audio.src;
     obj.currentTime = audio.currentTime;
     obj.id = 0;
+    obj.currentSong = obj.allSongs[obj.id].src;
   }
   audio.play(obj.currentSong);
 }
@@ -77,9 +77,13 @@ function pause() {
 }
 
 function next() {
-  if (userData.currentSong !== null) {
-    audio.play(userData.allSongs[userData.id + 1].src);
-    return (userData.id += 1);
+  const nextSong = userData.allSongs[userData.id + 1];
+  if (nextSong) {
+    userData.currentSong = nextSong.src;
+    userData.id += 1;
+    audio.src = nextSong.src;
+    audio.play();
+    console.log(userData.currentSong);
   }
 }
 
@@ -89,3 +93,5 @@ playButton.addEventListener("click", () => {
 
 pauseButton.addEventListener("click", pause);
 nextButton.addEventListener("click", next);
+
+console.log(nextButton);
