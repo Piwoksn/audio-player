@@ -1,5 +1,3 @@
-const { use } = require("react");
-
 const playListSongs = [
   {
     id: 0,
@@ -108,8 +106,6 @@ playButton.addEventListener("click", () => {
 pauseButton.addEventListener("click", pause);
 nextButton.addEventListener("click", next);
 
-previousButton.addEventListener("click", () => {
-  console.log("Previous");
-});
+previousButton.addEventListener("click", previous);
 
-console.log(previousButton);
+console.log("Hello");
