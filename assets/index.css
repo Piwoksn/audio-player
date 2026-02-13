@@ -46,8 +46,45 @@ div.container {
 
 .currentplaying-container {
   height: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 80%;
 }
 
 .playlist-container {
   height: 60%;
+}
+
+.current-music,
+.music-icons {
+  width: 100%;
+}
+
+button i {
+  font-size: 15px;
+  color: var(--text3);
+}
+
+.music-icons {
+  display: flex;
+  justify-content: space-evenly;
+}
+.music-icons button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.current-music {
+  padding: 15%;
+}
+
+.current-music p {
+  color: var(--text2);
+  text-align: center;
+}
+
+.current-music p:last-of-type {
+  color: var(--text3);
+  font-size: 12px;
 }
