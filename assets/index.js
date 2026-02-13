@@ -55,6 +55,8 @@ const playButton = document.querySelector(".play");
 const pauseButton = document.querySelector(".pause");
 const nextButton = document.querySelector(".next");
 const previousButton = document.querySelector(".previous");
+const songname = document.querySelector(".musicname");
+const artist = document.querySelector(".artistname");
 
 const audio = new Audio();
 
@@ -64,8 +66,13 @@ function play(obj) {
     audio.play();
     obj.currentTime = audio.currentTime;
     obj.id = 0;
+    obj.artist = obj.allSongs[obj.id].artist;
     obj.currentSong = obj.allSongs[obj.id].src;
+    songname.textContent = obj.allSongs[obj.id].songTitle;
+    artist.textContent = obj.artist;
   }
+  songname.textContent = obj.allSongs[obj.id].songTitle;
+  artist.textContent = obj.artist;
   audio.play(obj.currentSong);
 }
 
@@ -83,7 +90,9 @@ function next() {
     userData.id += 1;
     audio.src = nextSong.src;
     audio.play();
-    console.log(userData.currentSong);
+    userData.artist = nextSong.artist;
+    artist.textContent = userData.artist;
+    songname.textContent = nextSong.songTitle;
   }
 }
 
@@ -94,6 +103,9 @@ function previous() {
     userData.currentSong = previousSong.src;
     userData.id = previousSong.id;
     audio.play();
+    userData.artist = previousSong.artist;
+    artist.textContent = userData.artist;
+    songname.textContent = previousSong.songTitle;
   }
 }
 
@@ -107,5 +119,3 @@ pauseButton.addEventListener("click", pause);
 nextButton.addEventListener("click", next);
 
 previousButton.addEventListener("click", previous);
-
-console.log("Hello");
