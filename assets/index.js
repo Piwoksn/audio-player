@@ -1,3 +1,5 @@
+const { use } = require("react");
+
 const playListSongs = [
   {
     id: 0,
@@ -87,6 +89,18 @@ function next() {
   }
 }
 
+function previous() {
+  if (userData.id > 0) {
+    const previousSong = userData.allSongs[userData.id - 1];
+    audio.src = previousSong.src;
+    userData.currentSong = previousSong.src;
+    userData.id = previousSong.id;
+    audio.play();
+  }
+}
+
+// Events
+
 playButton.addEventListener("click", () => {
   play(userData);
 });
@@ -94,4 +108,8 @@ playButton.addEventListener("click", () => {
 pauseButton.addEventListener("click", pause);
 nextButton.addEventListener("click", next);
 
-console.log(nextButton);
+previousButton.addEventListener("click", () => {
+  console.log("Previous");
+});
+
+console.log(previousButton);
