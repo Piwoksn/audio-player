@@ -1,4 +1,4 @@
-const allSongs = [
+const playListSongs = [
   {
     id: 1,
     artist: "Chike",
@@ -42,3 +42,15 @@ const allSongs = [
     duration: "3:59",
   },
 ];
+
+const userData = {
+  allSongs: playListSongs,
+  currentSong: null,
+  artist: null,
+  duration: 0,
+};
+
+const playButton = document.querySelector(".play");
+const pauseButton = document.querySelector(".pause");
+const nextButton = document.querySelector(".next");
+const previousButton = document.querySelector(".previous");

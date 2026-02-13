@@ -146,3 +146,7 @@ i:hover {
 li:not(:last-child) {
   border-bottom: 1px solid var(--primary);
 }
+
+.playing {
+  color: var(--text3);
+}
