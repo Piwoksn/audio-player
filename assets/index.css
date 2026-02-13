@@ -109,14 +109,13 @@ ul li button {
   color: var(--text4);
 }
 
-.all-songs li {
+.all-songs li button {
   width: 100%;
   padding: 10px 5px;
 }
 .all-songs button {
   width: 100%;
   text-align: left;
-  padding: 5px;
 }
 
 .all-songs span {
@@ -126,9 +125,11 @@ ul li button {
 span.music-name {
   width: 50%;
 }
-
+button span {
+  padding: 5px;
+}
 span.artist {
-  width: 50px;
+  width: 70px;
   text-align: left;
 }
 
@@ -143,5 +144,5 @@ i:hover {
 }
 
 li:not(:last-child) {
-  border-bottom: 1px solid var(--secondary);
+  border-bottom: 1px solid var(--primary);
 }
