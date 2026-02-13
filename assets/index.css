@@ -79,6 +79,13 @@ button {
   padding: 15%;
 }
 
+.current-music {
+  background-image: url("/assets/image/img.png");
+  background-position: left center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 ul {
   list-style: none;
 }
