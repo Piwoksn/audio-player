@@ -41,18 +41,18 @@ div.container {
 
 .currentplaying-container,
 .playlist-container {
-  border: 1px solid var(--secondary);
+  background-color: #3a0d5a;
 }
 
 .currentplaying-container {
   height: 40%;
   display: flex;
   flex-direction: column;
-  gap: 80%;
 }
 
 .playlist-container {
   height: 60%;
+  border-top: 1px solid var(--secondary);
 }
 
 .current-music,
@@ -69,7 +69,7 @@ button i {
   display: flex;
   justify-content: space-evenly;
 }
-.music-icons button {
+button {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -77,6 +77,14 @@ button i {
 
 .current-music {
   padding: 15%;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li button {
+  font-family: "Courier New", Courier, monospace;
 }
 
 .current-music p {
@@ -87,4 +95,40 @@ button i {
 .current-music p:last-of-type {
   color: var(--text3);
   font-size: 12px;
+}
+
+.all-songs button {
+  color: var(--text4);
+}
+
+.all-songs li {
+  width: 100%;
+}
+.all-songs button {
+  width: 100%;
+  text-align: left;
+  padding: 5px;
+}
+
+.all-songs span {
+  display: inline-block;
+}
+
+span.music-name {
+  width: 50%;
+}
+
+span.artist {
+  width: 50px;
+  text-align: left;
+}
+
+span.duration {
+  width: 40px;
+  text-align: left;
+}
+
+button:hover,
+i:hover {
+  color: var(--text2);
 }
