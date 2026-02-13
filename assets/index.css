@@ -1,0 +1,23 @@
+:root {
+  --primary: #4b0082;
+  --secondary: #b39eb5;
+  --tertiary: #f4f1fa;
+  --text1: #3f2a45;
+  --text2: #c49e3a;
+  --text3: #f7f4ea;
+  --text4: #d7a3c7;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: var(--primary);
+  width: 100%;
+  height: 100%;
+}
