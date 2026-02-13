@@ -16,8 +16,37 @@
   box-sizing: border-box;
 }
 
-.container {
+div.container {
+  background-color: var(--secondary);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.music-player,
+.currentplaying-container,
+.playlist-container {
   background-color: var(--primary);
-  width: 100%;
-  height: 100%;
+}
+
+.music-player {
+  border: 1px solid var(--primary);
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.currentplaying-container,
+.playlist-container {
+  border: 1px solid var(--secondary);
+}
+
+.currentplaying-container {
+  height: 40%;
+}
+
+.playlist-container {
+  height: 60%;
 }
