@@ -57,6 +57,7 @@ const nextButton = document.querySelector(".next");
 const previousButton = document.querySelector(".previous");
 const songname = document.querySelector(".musicname");
 const artist = document.querySelector(".artistname");
+const musicButtons = document.querySelectorAll(".music");
 
 const audio = new Audio();
 
@@ -113,9 +114,50 @@ function previous() {
 
 playButton.addEventListener("click", () => {
   play(userData);
+  colorNowPlaying(userData.id);
 });
 
 pauseButton.addEventListener("click", pause);
-nextButton.addEventListener("click", next);
+nextButton.addEventListener("click", () => {
+  next();
+  colorNowPlaying(userData.id);
+});
 
-previousButton.addEventListener("click", previous);
+previousButton.addEventListener("click", () => {
+  previous();
+  colorNowPlaying(userData.id);
+});
+
+musicButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const musicElement = button.querySelector("audio");
+
+    userData.currentSong = `assets/audio/${musicElement.getAttribute("src")}`;
+    const music = userData.allSongs.find(
+      (item) => item.src === userData.currentSong,
+    );
+    userData.id = music.id;
+    userData.artist = music.artist;
+    audio.src = userData.currentSong;
+    audio.play();
+    songname.textContent = music.songTitle;
+    artist.textContent = music.artist;
+    colorNowPlaying(userData.id);
+  });
+});
+
+function colorNowPlaying(currentSongId) {
+  const allLi = document.querySelectorAll("li");
+
+  allLi.forEach((item) => {
+    item
+      .querySelectorAll("span")
+      .forEach((span) => span.classList.remove("playing"));
+
+    if (Number(item.id) === currentSongId) {
+      item
+        .querySelectorAll("span")
+        .forEach((span) => span.classList.add("playing"));
+    }
+  });
+}
