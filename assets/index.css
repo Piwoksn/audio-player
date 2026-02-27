@@ -2,6 +2,7 @@
   --primary: #4b0082;
   --secondary: #b39eb5;
   --tertiary: #f4f1fa;
+  --musicContainer: #3a0d5a;
   --text1: #3f2a45;
   --text2: #c49e3a;
   --text3: #f7f4ea;
@@ -41,17 +42,17 @@ div.container {
 
 .currentplaying-container,
 .playlist-container {
-  background-color: #3a0d5a;
+  background-color: var(--musicContainer);
 }
 
 .currentplaying-container {
-  height: 40%;
+  height: 45%;
   display: flex;
   flex-direction: column;
 }
 
 .playlist-container {
-  height: 60%;
+  height: 55%;
   border-top: 1px solid var(--secondary);
   overflow-y: scroll;
 }
